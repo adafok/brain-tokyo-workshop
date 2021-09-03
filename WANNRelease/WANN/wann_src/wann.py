@@ -134,9 +134,9 @@ class Wann():
     nConns[nConns==0] = 1 # No conns is always pareto optimal (but boring)
     nNode = np.asarray([len(ind.node[0, :])-ind.nInput-ind.nOutput for ind in self.pop]) ## internal node + bias node
     ent = np.asarray([ind.entropy()   for ind in self.pop]) + self.p['epsilon'] ## entropy plus epsilon for avoiding divide by zero
-    objVals = np.c_[meanFit,maxFit,1/nConns, 1/nNode, 1/ent] # Maximize ##add nNode and ent
+    objVals = np.c_[meanFit,maxFit,1/nConns, 1/nNode, 1/ent] ## add nNode and ent
 
-    # Alternate second objective
+    # Alternate second objective (four-probability cases)
     rand = np.random.rand()
     if self.p['alg_probMoo'] < rand:
       rank = nsga_sort(objVals[:,[0,1]])
@@ -147,7 +147,7 @@ class Wann():
     else:
       rank = nsga_sort(objVals[:,[0,4]])
 
-    # Alternate second objective
+    # Alternate second objective (two-probability cases)
     # if self.p['alg_probMoo'] < np.random.rand():
     #   rank = nsga_sort(objVals[:, [0, 1]])
     # else:
