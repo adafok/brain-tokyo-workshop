@@ -1,43 +1,11 @@
-# Brain Tokyo Workshop 🧠🗼
+<h1>Weight Agnostic Neural Networks under Network Constraints</h1>
 
-This repo contains research materials released by members of the Google Brain team in Tokyo.
+This repository contains the source code for my bachelor thesis titled "Weight Agnostic Neural Networks under Network Constraints". It is based on [Weight Agnostic Neural Networks](https://github.com/google/brain-tokyo-workshop/tree/master/WANNRelease). 
 
-## Past Projects ##
+Our goal was to search for the the optimal solutions where the performance is maximized while minimizing the network's complexity. The major contribution is the implementation of two additional complexity constraints: 1) the number of internal nodes and 2) entropy.
 
-### Weight Agnostic Neural Networks ###
+<h3>Setup</h3>
 
-<p align="left">
-  <img width="50%" src="WANNRelease/prettyNEAT/demo/img/swing.gif"></img>
-</p>
+Basically, you can follow the instructions in [WANN](https://github.com/google/brain-tokyo-workshop/tree/master/WANNRelease/WANN/). If you want to adjust the probabilities of choosing a specific objective, you can change the hyperparameters which begin with <code>alg_probMoo</code> in <code>/WANN/p/default_wan.json</code>. Moreover, the combination of different objectives can be changed in <code>probMoo</code> in <code>/WANN/wann_src/wann.py</code>.
 
-[Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/WANNRelease)
-
-[Link to Article](https://weightagnostic.github.io/) ([pdf version](https://arxiv.org/abs/1906.04358))
-
-### Learning to Predict Without Looking Ahead: World Models Without Forward Prediction ###
-
-<p align="left">
-  <img width="50%" src="learntopredict/assets/learntopredict.gif"></img>
-</p>
-
-[Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/learntopredict)
-
-[Link to Article](https://learningtopredict.github.io/) ([pdf version](https://arxiv.org/abs/1910.13038))
-
-### Neuroevolution of Self-Interpretable Agents ###
-
-<img width="50%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/attentionagent.gif"></img>
-
-[Code Release](https://github.com/google/brain-tokyo-workshop/tree/master/AttentionAgent)
-([Code for CarRacing Variants](https://github.com/google/brain-tokyo-workshop/tree/master/CarRacingExtension))
-
-<img width="50%" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/attention/assets/card/CarRacingExt2SmallSize.gif"></img>
-
-
-*[Extensions](https://github.com/google/brain-tokyo-workshop/tree/master/CarRacingExtension) to CarRacing-v0 environment released to facilitate future research.*
-
-[Link to Article](https://attentionagent.github.io/) ([pdf version](https://arxiv.org/abs/2003.08165))
-
-## Disclaimer
-
-This is not an official Google product.
+Please note that the experiments have only done on the cart-pole swing-up task.
